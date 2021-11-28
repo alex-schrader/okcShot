@@ -11,10 +11,13 @@ def shotLocation(shot):
     return "2P"
 
 def main():
+    #reading in data
     data = open('shots_data.csv', 'r').readlines()
     for i in range(len(data)):
         data[i] = data[i].split(',')
         data[i][3] = data[i][3].strip('\n')
+
+    #removing headers
     data.pop(0)
 
     #Naming: Team, shot type, make/miss
